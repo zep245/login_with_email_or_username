@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" >
+	{% if messages %}
+        {% for message in messages %}
+          <li>{{message}}</li>
+        {% endfor %}
+      {%endif%}
+	{% csrf_token %}
+    <a href="{% url 'home' %}">Home</a>
+	<h1>Login form</h1>
+	<input type="text" name="emailorusername" class="" placeholder="Enter username or email"/>
+    <input type="password" name="password" class="" placeholder="Enter password"/>
+	<button type="submit">Login</button>
+</form>
+{% endblock %}
