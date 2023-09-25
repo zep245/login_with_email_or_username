@@ -54,7 +54,7 @@ def register(request):
 
 def login(request):
     if request.method == 'POST':
-        email_or_username = request.POST.get('emailorusername')  # Use get() to avoid KeyError
+        email_or_username = request.POST.get('emailorusername') 
         password = request.POST.get('password')
 
         if not email_or_username:
